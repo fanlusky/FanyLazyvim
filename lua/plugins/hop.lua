@@ -1,5 +1,5 @@
 return {
-  "smoka7/hop.nvim",
+  "fanlusky/hop.nvim",
   version = "*",
   vscode = true,
   opts = {},
