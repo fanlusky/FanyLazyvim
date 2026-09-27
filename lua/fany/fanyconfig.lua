@@ -19,7 +19,7 @@ vim.api.nvim_command("set indentkeys-=<:>")
 if not vim.g.vscode then
   require("lspconfig").powershell_es.setup({
     filetypes = { "ps1", "psm1", "psd1" },
-    bundle_path = "~/AppData/Local/nvim-data/mason/packages/powershell-editor-services",
+    bundle_path = vim.fn.stdpath("data") .. "/mason/packages/powershell-editor-services",
     settings = { powershell = { codeFormatting = { Preset = "OTBS" } } },
     init_options = {
       enableProfileLoading = false,

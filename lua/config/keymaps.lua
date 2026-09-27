@@ -39,19 +39,19 @@ local directions = require("hop.hint").HintDirection
 local positions = require("hop.hint").HintPosition
 -- leader leader w
 map({ "n", "v" }, "<leader><leader>w", function()
-  hop.hint_words({ direction = directions.AFTER_CURSOR })
+  hop.hint_words_jieba({ direction = directions.AFTER_CURSOR })
 end, { desc = "Go to next any begining of words" })
 -- leader leader e
 map({ "n", "v" }, "<leader><leader>e", function()
-  hop.hint_words({ direction = directions.AFTER_CURSOR, hint_position = positions.END })
+  hop.hint_words_jieba({ direction = directions.AFTER_CURSOR, hint_position = positions.END })
 end, { desc = "Go to next any end of words" })
 -- leader leader b
 map({ "n", "v" }, "<leader><leader>b", function()
-  hop.hint_words({ direction = directions.BEFORE_CURSOR })
+  hop.hint_words_jieba({ direction = directions.BEFORE_CURSOR })
 end, { desc = "Go to previous any begining of words" })
 -- leader leader b
 map({ "n", "v" }, "<leader><leader>v", function()
-  hop.hint_words({ direction = directions.BEFORE_CURSOR, hint_position = positions.END })
+  hop.hint_words_jieba({ direction = directions.BEFORE_CURSOR, hint_position = positions.END })
 end, { desc = "Go to previous any end of words" })
 -- leader leader l
 map({ "n", "v" }, "<leader><leader>l", function()

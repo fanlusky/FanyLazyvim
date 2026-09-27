@@ -9,6 +9,7 @@ return {
       "prettier",
       "pyright",
       "autopep8",
+      "powershell-editor-services",
     },
   },
 }

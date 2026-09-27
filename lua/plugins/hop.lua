@@ -1,6 +1,6 @@
 return {
   "fanlusky/hop.nvim",
-  version = "*",
+  branch = "master", -- jieba support only lives on master, don't pin to a version tag
   vscode = true,
   opts = {},
   keys = {
