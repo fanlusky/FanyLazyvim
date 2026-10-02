@@ -4,7 +4,8 @@ return {
   name = "catppuccin",
   opts = {
     term_colors = true,
-    transparent_background = true,
+    -- Ndx can't render a transparent window, it would show a black background
+    transparent_background = not vim.g.ndx,
     custom_highlights = function()
       return {
         RainbowRed = { fg = "#E06C75" },

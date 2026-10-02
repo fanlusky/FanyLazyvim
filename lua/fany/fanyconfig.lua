@@ -1,5 +1,5 @@
 if vim.g.neovide then
-  vim.cmd.colorscheme("catppuccin")
+  vim.cmd.colorscheme("catppuccin-mocha")
 end
 
 -- 设置 visual 模式下选中的背景高亮色
