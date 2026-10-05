@@ -40,6 +40,15 @@ command! -nargs=0 CpAbsolutePath lua require("fany.utils.fanyutils").copy_absolu
   if vim.g.neovide == true then
     vim.api.nvim_set_keymap("n", "<F11>", ":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", {})
   end
+  -- Ndx: F11 切换全屏，Alt+Enter 切换无边框窗口（隐藏标题栏）
+  if vim.g.ndx then
+    map({ "n", "i", "v", "t" }, "<F11>", function()
+      vim.g.ndx_fullscreen = not vim.g.ndx_fullscreen
+    end, { desc = "Toggle Fullscreen" })
+    map({ "n", "i", "v", "t" }, "<M-CR>", function()
+      vim.g.ndx_borderless = not vim.g.ndx_borderless
+    end, { desc = "Toggle Borderless Window" })
+  end
 else
   map(
     "n",
