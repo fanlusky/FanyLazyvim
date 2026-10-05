@@ -1,6 +1,14 @@
 return {
   "saghen/blink.cmp",
   opts = function(_, opts)
+    -- markdown 中禁用自动补全（命令行补全不受影响）
+    opts.enabled = function()
+      if vim.fn.mode() == "c" then
+        return true
+      end
+      return vim.bo.filetype ~= "markdown" and vim.bo.buftype ~= "prompt" and vim.b.completion ~= false
+    end
+
     -- Windows 自带的 curl 在 --create-dirs 时会把中文用户名目录的编码弄错，导致预编译库下载失败。
     -- 这里改为在目标目录下运行 curl 并只传文件名，让参数里不出现中文路径。
     if vim.fn.has("win32") == 1 then

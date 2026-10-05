@@ -70,5 +70,7 @@ return {
       source.group_index = source.group_index or 1
     end
     require("cmp").setup(opts)
+    -- markdown 中禁用自动补全
+    require("cmp").setup.filetype("markdown", { enabled = false })
   end,
 }
