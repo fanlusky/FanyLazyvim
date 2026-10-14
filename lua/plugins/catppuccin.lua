@@ -4,8 +4,9 @@ return {
   name = "catppuccin",
   opts = {
     term_colors = true,
-    -- Ndx can't render a transparent window, it would show a black background
-    transparent_background = not vim.g.ndx,
+    -- In a GUI the transparent background reaches Ndx as black, which it draws with
+    -- g:ndx_background_opacity, so the window backdrop shows through
+    transparent_background = true,
     custom_highlights = function()
       return {
         RainbowRed = { fg = "#E06C75" },
