@@ -7,8 +7,12 @@ return {
     -- In a GUI the transparent background reaches Ndx as black, which it draws with
     -- g:ndx_background_opacity, so the window backdrop shows through
     transparent_background = true,
-    custom_highlights = function()
+    custom_highlights = function(C)
       return {
+        -- no underline on links (e.g. in markdown)
+        ["@markup.link.url"] = { fg = C.blue, style = { "italic" } },
+        ["@string.special.url"] = { fg = C.blue, style = { "italic" } },
+        markdownLinkText = { fg = C.blue, style = {} },
         RainbowRed = { fg = "#E06C75" },
         RainbowYellow = { fg = "#E5C07B" },
         RainbowBlue = { fg = "#61AFEF" },
